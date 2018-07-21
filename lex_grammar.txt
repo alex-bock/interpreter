@@ -1,0 +1,18 @@
+lex_grammar.txt
+
+The lexical classes are given below (in regex notation):
+
+VAR     := letter (letter | digit)*
+NUM     := "0"
+         | nonzero_digit digit*
+BOOLEAN := "True" | "False"
+SYM     := "(" | ")"
+OP      := "+" | "-" | "*" | "/"
+COMMENT := "#" (non_newline + E)*
+
+where:
+
+- "letter" is the set of all lowercase or uppercase Roman-alphabet letters,
+- "digit" is the set of all digits from 0 to 9 ("nonzero_digit", intuitively, is a subset excluding 0),
+- "non_newline" is the set of all ASCII characters excluding the newline character '\n', and
+- "E" is the null character, i.e. nothing at all.
