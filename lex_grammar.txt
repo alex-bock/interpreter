@@ -2,12 +2,11 @@ lex_grammar.txt
 
 The lexical classes are given below (in regex notation):
 
-VAR     := letter (letter | digit)*
-NUM     := "0"
-         | nonzero_digit digit*
+VAR     := letter (letter + digit)*
+NUM     := "0" + (nonzero_digit digit*)
 BOOLEAN := "True" | "False"
-SYM     := "(" | ")"
-OP      := "+" | "-" | "*" | "/"
+SYM     := "(" + ")"
+OP      := "+" + "-" + "*" + "/" + "=" + "==" + ">" + "<" + "not" + "and" + "or"
 COMMENT := "#" (non_newline + E)*
 
 where:
